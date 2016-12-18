@@ -1,0 +1,17 @@
+.thumbnail {
+    background-color: inherit;
+    display: inline-block;
+    position: relative;
+    height: 420px;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-shadow:0 0 0 1000px rgba(0, 0, 0, 0.1) inset;
+}
+
+.image {
+    display: inline-block;
+    cursor: pointer;
+    max-height: 200px;
+    width: 100%;
+}

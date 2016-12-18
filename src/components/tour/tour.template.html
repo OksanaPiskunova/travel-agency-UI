@@ -1,0 +1,50 @@
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 thumbnail">
+    <div class="container-fluid ">
+        <!-- Main Image -->
+        <div>
+            <a ui-sref="tour({ id: tour.id })">
+                <img class="image" src="{{ tour.image_tour[0].image }}" alt="{{ tour.image_tour[0].description }}"/>
+            </a>
+            <h3>
+                <a ui-sref="tour({ id: tour.id })">
+                    {{ tour.title  | uppercase }}
+                </a>
+            </h3>
+        </div>
+        <div>
+            <div class="col-xs-5">
+                <p>
+                    Start:
+                <p>
+                <p>
+                    End:
+                </p>
+                <p>
+                    Cost:
+                </p>
+                <p>
+                    Contacts:
+                </p>
+                <p>
+                    Description:
+                </p>
+            </div>
+            <div class="col-xs-7">
+                <p>
+                    {{ tour.begin_date }}
+                </p>
+                <p>
+                    {{ tour.end_date }}
+                </p>
+                <p>
+                    {{ tour.cost }}
+                </p>
+                <p>
+                    {{ tour.contact_details }}
+                </p>
+                <p>
+                    {{ tour.content | limitTo:10 }}...
+            </div>
+        </div>
+    </div>
+</div>
