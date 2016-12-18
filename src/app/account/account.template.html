@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="container">
+        <h1>
+            Welcome, {{ account.user.username }}
+        </h1>
+        <div>
+            <i>
+                {{ account.user.email }}
+            </i>
+        </div>
+    </div>
+    <div class="container">
+        <h3>
+            Reservations
+        </h3>
+        <tour
+            ng-repeat="tour in account.tours track by $index"
+            tour="tour">
+        </tour>
+    </div>
+</div>
