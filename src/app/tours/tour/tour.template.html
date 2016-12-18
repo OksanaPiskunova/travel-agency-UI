@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <div class="container">
+        <a ui-sref="tours">
+            <p>
+                <i class="fa fa-reply"></i>
+                Go to Tours
+            </p>
+        </a>
+    </div>
+    <div class="container">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <img class="main-image image"
+                ng-src="{{ tour.mainImage.image }}"
+                alt="{{ tour.mainImage.description }}"/>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-nd-6 col-lg-6">
+            <div class="container-fluid" align="center">
+                <h1>
+                    <b>
+                        {{ tour.tour.title | uppercase }}
+                    </b>
+                </h1>
+            </div>
+            <div class="container-fluid">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <rating rating="tour.tour.rating_tour[0].average_rating"
+                    on-user-select="tour.updateRating()"></rating>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+                    <a ng-if="currentUser" ng-click="tour.reserve()">
+                        <h4>
+                            <i class="fa fa-plus-circle">
+                                Reserve
+                            </i>
+                        </h4>
+                    </a>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div>
+                    <div class="col-xs-5">
+                        <p>
+                            <i class="fa fa-calendar-check-o"></i>
+                            Start:
+                        <p>
+                        <p>
+                            <i class="fa fa-calendar-times-o"></i>
+                            End:
+                        </p>
+                        <p>
+                            <i class="fa fa-dollar"></i>
+                            Cost:
+                        </p>
+                        <p>
+                            <i class="fa fa-phone"></i>
+                            Contacts:
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker"></i>
+                            Address:
+                        </p>
+                    </div>
+                    <div class="col-xs-7">
+                        <p>
+                            {{ tour.tour.begin_date }}
+                        </p>
+                        <p>
+                            {{ tour.tour.end_date }}
+                        </p>
+                        <p>
+                            {{ tour.tour.cost }}
+                        </p>
+                        <p>
+                            {{ tour.tour.contact_details }}
+                        </p>
+                        <p>
+                            {{ tour.tour.place_tour[0].address }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <img class="little-image"
+            ng-repeat="image in tour.tour.image_tour"
+            ng-click="tour.setImage(image)"
+            src="{{ image.image }}"
+            alt="{{ image.description }}"/>
+    </div>
+    <div class="container">
+        <p>
+            {{ tour.tour.content }}
+        </p>
+    </div>
+    <div class="container" ng-if="tour.tour.place_tour[0]">
+        <ng-map center="{{ tour.tour.place_tour[0].latitude }}, {{ tour.tour.place_tour[0].longitude }}"
+            zoom="12">
+            <marker position="{{ tour.tour.place_tour[0].latitude }}, {{ tour.tour.place_tour[0].longitude }}"
+                title="{{ tour.tour.place_tour[0].address}}"></marker>
+        </ng-map>
+    </div>
+    <div class="container">
+        <div id="disqus_thread"></div>
+    </div>
+</div>
