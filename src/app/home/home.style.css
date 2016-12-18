@@ -1,0 +1,18 @@
+/* Hide video current time*/
+.video-controls>span {
+  display: none;
+}
+
+.jumbotron {
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.tours-jumbotron, .about-jumbotron {
+    background-color: rgba(51, 51, 51, 0.3);
+    color: black;
+    font-size: 16px;
+}
+
+.info-jumbotron {
+    font-size: 18px;
+}
