@@ -1,0 +1,19 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-image: url("http://pattern4site.ru/images/woods/_rebig/8-fon-dlya-sayta.png");
+}
+
+a {
+    color: #472b1f;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #6a412e;
+}
+
+a:hover {
+    color: #b57046;
+    text-decoration: none;
+}
